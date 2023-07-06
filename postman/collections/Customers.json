@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "c8b54974-300c-4271-adc3-be3934ff0b5e",
+		"name": "Customers",
+		"description": "Create or check status of customer(s)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23503262-c8b54974-300c-4271-adc3-be3934ff0b5e"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "Read a customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f38ed681-4db4-4f0a-ba54-fb67c0eaebc2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"customerId\");",
+									"});",
+									"",
+									"pm.test('Validate data type of baseUrl', () => {",
+									"    console.log('url is ' + pm.request.url)",
+									"    pm.expect(pm.request.url).to.be.an('object');",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2af92700-167f-412e-9b49-a2a62aab7b62",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers/{{$randomUUID}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers",
+								"{{$randomUUID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d5ee3229-833b-47a3-b755-8745d1ed53a7",
+							"name": "The customer corresponding to the provided `customerId`",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/{{$randomUUID}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"{{$randomUUID}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customerId\": \"{{customerId}}\",\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"spendLevel\": \"{{$randomColor}}\",\n    \"preferredCurrency\": \"{{$randomCurrencyName}}\",\n    \"country\": \"{{$randomCountry}}\"\n}"
+						},
+						{
+							"id": "f48d0169-df9c-4137-a23a-945615a1ee78",
+							"name": "No profile found for the provided `customerId`",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/{{$randomUUID}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"{{$randomUUID}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"query\": \"{{customerId}}\",\n  \"error\": \"Malformed request\",\n  \"message\": \"The server was not able to accept this request\"\n}"
+						},
+						{
+							"id": "177c7d5e-41b6-4b70-bab3-073de8920534",
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/{{$randomUUID}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"{{$randomUUID}}"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"Internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List customers",
+					"id": "79f0fb49-72f5-45fa-a306-314ea216c724",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "98a853a5-7c42-4030-a2af-3df87e9fac29",
+							"name": "The current list of customers using pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\":\n        [\n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }\n        ],\n    \"limit\": \"100\",\n    \"nextPage\": \"{{baseUrl}}/customers?next_page\"\n}"
+						},
+						{
+							"id": "0ae469a1-2919-428a-9e7d-788e311975fb",
+							"name": "Malformed request body",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Malformed request\",\n    \"message\": \"The server was not able to accept this request\"\n}"
+						},
+						{
+							"id": "76874960-a439-4d9f-9c0f-f79983f5e3f5",
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Internal server error\"\n}"
+						}
+					]
+				}
+			],
+			"id": "457ede76-f48b-42d3-a1c6-4beee82e2790"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-Api-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "528c9381-1857-472a-9f07-5eb35bae23c3",
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Base URL is: \" + pm.environment.get(\"baseUrl\"));",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "eb0e5bcc-18c1-4dcc-a92a-6006d3f27be7",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Response time is less than 5 seconds\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "55e99aa7-f894-45b9-a052-faef5b543a06",
+			"key": "baseUrl",
+			"value": "https://www.example.com"
+		}
+	]
+}
