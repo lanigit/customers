@@ -1,12 +1,11 @@
 openapi: '3.0.0'
 info:
-  version: '1.0.0'
+  version: '1.0.1'
   title: 'Customers'
   description: Create or check status of customer(s)
 
 servers:
   - url: https://ef10ec23-f5c6-4db6-9673-3056fefd5ccb.mock.pstmn.io
-  - url: https://www.example.com
 
 paths:
   /customers:
@@ -17,6 +16,8 @@ paths:
           description: The current list of customers using pagination
         '400':
           description: Malformed request body
+        '401':
+          description: Invalid credentials
         '500':
           description: Internal server error
             
