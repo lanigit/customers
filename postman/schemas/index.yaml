@@ -18,6 +18,8 @@ paths:
           description: Malformed request body
         '401':
           description: Invalid credentials
+        '403':
+          description: Unauthorized access
         '500':
           description: Internal server error
             
