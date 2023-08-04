@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "30d76186-f425-43f4-89ca-c6a01e7c25d2",
+		"_postman_id": "3198cf61-2840-4c2b-ac16-7917dc23f600",
 		"name": "Customers CHALLENGE",
 		"description": "# Customers CHALLENGE Collection\n\n## Summary\n\nThis collection was designed to test and validate responses from the example [**Customers API**](https://cs-demo.postman.co/workspace/c06eaed9-1cdc-4b3e-934b-3985817a71fc/api/cfd9425f-2989-4f81-87e0-bea133996be4?branch=main), which reads and updates customer-specific data within the Acme Co database.\n\nThis collection does not have any test scripts in any Tests tabs included herein. Users will need to add tests based on the directions provided in the _**Test Automation Success Sprint**_.\n\nOutside of the steps from the Success Sprint, feel free to add any other tests, pre-request scripts, etc. That said, we recommend keeping your workspace in a manageable state so you can continue to easily use it for future reference.\n\n## How to use this collection\n\nThis collection is meant to run demonstrate how test assertions can be used in automated tests in Postman. For demonstrative purposes, our work will be in conjunction with the [Customers API](https://cs-demo.postman.co/workspace/c06eaed9-1cdc-4b3e-934b-3985817a71fc/api/cfd9425f-2989-4f81-87e0-bea133996be4?branch=main) example, which is also available in the _**Test Automation Success Sprint**_ workspace (under APIs > Customers).\n\nYou will notice it is possible to add _Collection-level_ scripts, along with _Request-specific_ **Tests** and **Pre-request Scripts**.\n\nThese scripts are meant to either support or validate required behavior in this API during **manual collection** runs (Postman UI or CLI), **scheduled** **collection** runs, **monitor** runs, and **CI/CD pipeline** runs.\n\n## Scoping\n\nThe collections, folders, and requests in this workspace all have their own scopes, contained within the scope of the workspace itself.\n\nYou can view more information on leveraging scopes within Postman scripts in our [Learning Center documentation](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes).\n\nA quick diagram on how variable scoping is leveraged in Postman can be seen here:\n\n<img src=\"https://content.pstmn.io/0db9807b-c108-4de1-89d0-229038d5a0a1/aW1hZ2UucG5n\" width=\"524\" height=\"395\">",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23503262-30d76186-f425-43f4-89ca-c6a01e7c25d2"
+		"_uid": "23503262-3198cf61-2840-4c2b-ac16-7917dc23f600"
 	},
 	"item": [
 		{
@@ -16,7 +16,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e0787d06-3ecb-47dd-8337-e35388df529b",
 								"exec": [
 									""
 								],
@@ -26,7 +25,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "74fbd59c-7512-46b0-9b6b-8fd9aa86adf0",
+								"id": "859b4a42-d0fb-4dc7-814e-e0a23a858388",
 								"exec": [
 									""
 								],
@@ -34,7 +33,7 @@
 							}
 						}
 					],
-					"id": "b91779bb-b1c3-4cad-bcdd-41a70c2bd311",
+					"id": "18d24ee2-56bd-46b1-bf97-d6d8cc2c8957",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -65,7 +64,7 @@
 					},
 					"response": [
 						{
-							"id": "8662e8dc-6901-4814-b433-5b6eee5d6446",
+							"id": "412ae673-df71-4011-9dab-b5a5f29f180a",
 							"name": "Search customer by email",
 							"originalRequest": {
 								"method": "GET",
@@ -110,7 +109,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8b9a323a-48a5-4eae-92df-d981be2e3218",
+								"id": "9e46d4de-c3e9-4ce9-bdbc-cd2e75f58a80",
 								"exec": [
 									""
 								],
@@ -118,7 +117,7 @@
 							}
 						}
 					],
-					"id": "cccb7ea2-76ab-4f75-a44a-3b32a609660f",
+					"id": "6f6958a7-efb2-4676-a31c-d9a37dde0ce7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -149,7 +148,7 @@
 					},
 					"response": [
 						{
-							"id": "aa42a0a8-f52d-4af7-ba1e-23a716774d9f",
+							"id": "7fdac13d-66ac-4c41-add6-2e5f92e519e9",
 							"name": "Search customer by name",
 							"originalRequest": {
 								"method": "GET",
@@ -194,7 +193,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a8630c30-d1e5-4f6a-89bb-39669a15ebff",
+								"id": "1c01ea32-2830-4c60-af35-a81d6f847279",
 								"exec": [
 									""
 								],
@@ -202,7 +201,7 @@
 							}
 						}
 					],
-					"id": "dce58e5b-4e4e-4fda-9618-5d6ceb1b9ac4",
+					"id": "cd410ad3-3e2b-479a-8286-b7f7ed300900",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -233,7 +232,7 @@
 					},
 					"response": [
 						{
-							"id": "2553b342-7b02-4df7-a02e-1f5de53b2c43",
+							"id": "a877c933-be60-4d37-b8a9-4d702d00723b",
 							"name": "Search customer by UUID",
 							"originalRequest": {
 								"method": "GET",
@@ -278,7 +277,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "84c670b9-52be-4d9f-96e3-cc570513fcc8",
+								"id": "2411fe66-842b-4414-8445-983d6a24e284",
 								"exec": [
 									""
 								],
@@ -286,7 +285,7 @@
 							}
 						}
 					],
-					"id": "1cd4cf87-91e5-4ed5-92bc-7699ccfff980",
+					"id": "bb8fb312-4c65-4017-90eb-a54fb5abfd29",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -305,7 +304,7 @@
 					},
 					"response": [
 						{
-							"id": "1d336dfd-02c4-4104-ac4d-8902dffb53da",
+							"id": "060318eb-12f8-40ce-ae59-2960ca3dd1c9",
 							"name": "The current list of customers using pagination",
 							"originalRequest": {
 								"method": "GET",
@@ -343,7 +342,7 @@
 							"body": "{\n    \"data\":\n        [\n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }\n        ],\n    \"limit\": \"100\",\n    \"nextPage\": \"{{baseUrl}}/customers?next_page\"\n}"
 						},
 						{
-							"id": "9763a65c-4b91-4bba-bb6b-531a93091f29",
+							"id": "ea6fadea-9874-4da6-bc49-e4ad9f42b1c2",
 							"name": "Malformed request body",
 							"originalRequest": {
 								"method": "GET",
@@ -381,7 +380,7 @@
 							"body": "{\n    \"error\": \"Malformed request\",\n    \"message\": \"The server was not able to accept this request\"\n}"
 						},
 						{
-							"id": "a0b7ba7a-0251-40f8-95ed-ec44e11e84ff",
+							"id": "c107cf33-006e-44ea-b401-f4f45a672330",
 							"name": "Internal server error",
 							"originalRequest": {
 								"method": "GET",
@@ -421,7 +420,7 @@
 					]
 				}
 			],
-			"id": "bf7316bd-40d7-46f2-9c36-e287cba99f6e",
+			"id": "2fe39637-e5e7-4505-ab8e-365cc3b35010",
 			"description": "## Customer search\n\nThis folder is meant to demonstrate different ways through which we can surface production-like data.\n\nThere are no tests or pre-request scripts, but the examples are using different types of variables in responses to implement this behavior. The variables in use are:\n\n- [Randomized values](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/) (Faker library)\n- [Contextual responses](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/creating-dynamic-responses/)\n    \n\nAnother option for more production-like variables is to use a [Wildcard variable](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/matching-algorithm/#using-wildcard-variables)."
 		},
 		{
@@ -433,7 +432,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8bdb1c00-4b97-4113-a2b2-145f7fec8cf8",
+								"id": "198b3eb2-e272-43e6-bbed-f035c0e56b05",
 								"exec": [
 									"// SET A RANDOMIZED INTEGER AND ",
 									"// SET IT AS A NEW VARIABLE",
@@ -474,7 +473,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "24d4accd-23d3-4594-afd9-1af7863d0ff4",
+								"id": "7a9303c4-a907-442a-9e01-4441efb14b76",
 								"exec": [
 									""
 								],
@@ -482,7 +481,7 @@
 							}
 						}
 					],
-					"id": "864abc9b-e904-4379-9ccc-bb8b262e6b4f",
+					"id": "8ff4e6aa-0024-4efe-8da7-da07d71abde7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -510,7 +509,7 @@
 					},
 					"response": [
 						{
-							"id": "4a1664f0-ba4c-4bd6-80e8-d98ca442becf",
+							"id": "4203f234-3a57-4726-95cf-9a97304ed4f4",
 							"name": "Create customer",
 							"originalRequest": {
 								"method": "POST",
@@ -558,7 +557,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "56497998-df93-4365-8f08-ba6aa1fcf74e",
+								"id": "e4675b8f-cc5b-4690-a102-2ada91d7420d",
 								"exec": [
 									"console.log(`Starting request to random user API`);",
 									"",
@@ -580,7 +579,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c1d8a39-33e5-4694-ab0c-1c33e62b744a",
+								"id": "304ace20-3d06-4cdf-96d0-f94b559bb9e6",
 								"exec": [
 									""
 								],
@@ -588,7 +587,7 @@
 							}
 						}
 					],
-					"id": "62bff81e-3b25-4fee-a2d3-f3bf544c5422",
+					"id": "b655d5bf-0c92-46ff-8464-75857731e4a4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -614,7 +613,7 @@
 					},
 					"response": [
 						{
-							"id": "cb027091-d1fd-4f1b-aae0-5ed33dba8e47",
+							"id": "465b47cb-a81b-4b0a-b0c1-70a7a2328cd8",
 							"name": "Customer data",
 							"originalRequest": {
 								"method": "GET",
@@ -695,7 +694,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e9b68c65-58c3-4bb9-b1a6-6313e797a547",
+								"id": "0aea681b-7a2e-4566-9733-f1d9a66b0595",
 								"exec": [
 									"// SET A RANDOMIZED INTEGER AND ",
 									"// SET IT AS A NEW VARIABLE",
@@ -736,7 +735,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7392ae6d-a747-4b8e-8d66-f0009505e1b5",
+								"id": "1b3eaf9b-60ea-43e8-9399-47da3ad6979b",
 								"exec": [
 									""
 								],
@@ -744,7 +743,7 @@
 							}
 						}
 					],
-					"id": "11d65928-2138-452f-a728-9ae5db3fad6e",
+					"id": "b3bd479a-0f67-485d-a831-ed76fd8b357d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -773,7 +772,7 @@
 					},
 					"response": [
 						{
-							"id": "e46ecbdf-4929-4c78-bb3e-10240490611b",
+							"id": "cee11bc9-7e8b-49b2-bdf2-b3b8d8030377",
 							"name": "Update customer",
 							"originalRequest": {
 								"method": "PUT",
@@ -822,7 +821,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d951ab61-fe0f-4b41-8783-dc04cff866fa",
+								"id": "eb37784e-dcd9-46df-be76-35376c7143fd",
 								"exec": [
 									"// CREATE A REQUEST TO ",
 									"// CALL RANDOM USER INFO",
@@ -844,7 +843,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eff0d024-f15a-4478-80ef-f428ae673cf3",
+								"id": "d99a51fa-e66e-439c-ae73-bf591c9cb8a4",
 								"exec": [
 									""
 								],
@@ -852,7 +851,7 @@
 							}
 						}
 					],
-					"id": "8a6b5314-dbf8-4090-8d93-d1f51cc17ba3",
+					"id": "003e7b58-9660-49bf-8258-1d84e50851bc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -878,7 +877,7 @@
 					},
 					"response": [
 						{
-							"id": "654245d9-fcda-407e-a960-2da0f5ad3fb7",
+							"id": "2b39f23d-37a5-48f6-a688-24248256e930",
 							"name": "Delete customer",
 							"originalRequest": {
 								"method": "DELETE",
@@ -920,7 +919,7 @@
 					]
 				}
 			],
-			"id": "b3bacb36-8d08-4884-ace8-3f0fdc9c0c60",
+			"id": "96755eb1-ea8b-492f-b497-5f2d50672cd0",
 			"description": "## Collection setup & runner\n\nYou should have already [forked](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) the **Customers CHALLENGE** collection to a workspace of your own\n\n### **Notes**\n\n- This collection leverages a [Mock server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/)\n- These collections use pre-defined example responses that the Mock Server is serving\n    \n\n### **Next steps**\n\n1. Send each request from the **CRUD Challenge** folder at least once\n    1. Review the example responses for each request\n    2. Confirm you receive expected responses based on pre-defined example responses\n2. In the Tests tab, add each of the following [test snippets](https://learning.postman.com/docs/writing-scripts/test-scripts/#using-snippets)\\* to each request in the CRUD Challenge folder and save\n    1. `Status Code: Code is 200`\n    2. `Status code name has string`\n    3. `Response time is less than 200ms`\n    4. `Response headers: Content-Type is present`\n3. Send each request and validate responses\n4. Part of this challenge is to update the tests to correctly validate expected responses\n    1. Ex: For a successful POST request, users would expect a `201 Created` HTTP response, as opposed to `200 OK`.\n5. When tests are passing, run your collection\n6. Go to Runs tab and review run data\n    \n\n### Expected results\n\n- All tests should indicate a “Success”\n    - POST calls should have 201\n    - GET/PUT calls should have 200\n    - DELETE calls should have 204\n- Collection runner runs without any errors and all tests pass"
 		}
 	],
@@ -948,7 +947,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b06f5f32-43e6-453a-86f0-dbee0ff2568c",
+				"id": "f251dc18-2a57-49d7-8f7f-0ad5a2ef746e",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -958,7 +957,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "00dca48f-3be0-422f-8a84-5f58ba585cfb",
+				"id": "2c997813-475c-47cb-bafb-858dbcc53206",
 				"type": "text/javascript",
 				"exec": [
 					""
