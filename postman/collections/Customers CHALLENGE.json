@@ -1,0 +1,1016 @@
+{
+	"info": {
+		"_postman_id": "eedaa192-12b0-48e7-9d56-d8cd25d0604b",
+		"name": "Customers CHALLENGE",
+		"description": "# Customers CHALLENGE Collection\n\n## Summary\n\nThis collection was designed to test and validate responses from the example [**Customers API**](https://cs-demo.postman.co/workspace/c06eaed9-1cdc-4b3e-934b-3985817a71fc/api/cfd9425f-2989-4f81-87e0-bea133996be4?branch=main), which reads and updates customer-specific data within the Acme Co database.\n\nThis collection does not have any test scripts in any Tests tabs included herein. Users will need to add tests based on the directions provided in the _**Test Automation Success Sprint**_.\n\nOutside of the steps from the Success Sprint, feel free to add any other tests, pre-request scripts, etc. That said, we recommend keeping your workspace in a manageable state so you can continue to easily use it for future reference.\n\n## How to use this collection\n\nThis collection is meant to run demonstrate how test assertions can be used in automated tests in Postman. For demonstrative purposes, our work will be in conjunction with the [Customers API](https://cs-demo.postman.co/workspace/c06eaed9-1cdc-4b3e-934b-3985817a71fc/api/cfd9425f-2989-4f81-87e0-bea133996be4?branch=main) example, which is also available in the _**Test Automation Success Sprint**_ workspace (under APIs > Customers).\n\nYou will notice it is possible to add _Collection-level_ scripts, along with _Request-specific_ **Tests** and **Pre-request Scripts**.\n\nThese scripts are meant to either support or validate required behavior in this API during **manual collection** runs (Postman UI or CLI), **scheduled** **collection** runs, **monitor** runs, and **CI/CD pipeline** runs.\n\n## Scoping\n\nThe collections, folders, and requests in this workspace all have their own scopes, contained within the scope of the workspace itself.\n\nYou can view more information on leveraging scopes within Postman scripts in our [Learning Center documentation](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes).\n\nA quick diagram on how variable scoping is leveraged in Postman can be seen here:\n\n<img src=\"https://content.pstmn.io/0db9807b-c108-4de1-89d0-229038d5a0a1/aW1hZ2UucG5n\" width=\"524\" height=\"395\">",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23503262-eedaa192-12b0-48e7-9d56-d8cd25d0604b"
+	},
+	"item": [
+		{
+			"name": "Customer search",
+			"item": [
+				{
+					"name": "Search customer by email",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5d58cad6-9387-4425-a29f-583b659fcfa0",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5e31e4b3-410b-4a05-8b81-6931df0e96ac",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "73b6e99f-ce42-421d-b649-dfd0fb84b0ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-id",
+								"value": "23503262-b08379ce-d9b1-4c32-a0e3-0775d682eaa7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers?query={{$randomEmail}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "{{$randomEmail}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "ffcf7c5e-7b21-4e2e-b9b4-729e51f92938",
+							"name": "Search customer by email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers?query={{$randomEmail}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "{{$randomEmail}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customerId\": \"{{$queryParams 'query'}}\",\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"spendLevel\": {{$randomInt}},\n    \"preferredCurrency\": \"{{$randomCurrencyCode}}\",\n    \"country\": \"{{$randomCountry}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search customer by name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9df89077-6f5c-409d-8643-fe3add6e92cf",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9f5931eb-eaf6-4db9-a0c6-c81daca4db91",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-id",
+								"value": "23503262-db0a2f6b-f8a0-4b8a-8488-d706d76f2100",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers?query={{$randomFirstName}}+{{$randomLastName}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "{{$randomFirstName}}+{{$randomLastName}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6306cdd1-d3b1-411c-9e09-d80de818c2ad",
+							"name": "Search customer by name",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers?query={{$randomFirstName}}+{{$randomLastName}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "{{$randomFirstName}}+{{$randomLastName}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customer\": \"{{$queryParams 'query'}}\",\n    \"spendLevel\": {{$randomInt}},\n    \"preferredCurrency\": \"{{$randomCurrencyCode}}\",\n    \"country\": \"{{$randomCountry}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search customer by customerId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d90e35d-d707-481f-9ec9-67739d61c238",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8476d2a3-b858-4205-a2b2-112f9381f0f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-id",
+								"value": "23503262-3fe5379d-d3fd-4710-8783-a344c7e15ba2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers?query={{$randomUUID}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "{{$randomUUID}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2a1f6fd5-424e-4296-a7fc-91db75b36b93",
+							"name": "Search customer by UUID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers?query={{$randomUUID}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "{{$randomUUID}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customerId\": \"{{$queryParams 'query'}}\",\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"spendLevel\": {{$randomInt}},\n    \"preferredCurrency\": \"{{$randomCurrencyCode}}\",\n    \"country\": \"{{$randomCountry}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8325e68b-56f5-44fb-8eaf-996d14df69b8",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f1f41a93-e592-407c-bc74-107b9bd726e6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "4f394852-7312-4aa1-af57-db48d41dffc8",
+							"name": "The current list of customers using pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\":\n        [\n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }, \n            {\n                \"customerId\": \"{{$randomUUID}}\",\n                \"firstName\": \"{{$randomFirstName}}\",\n                \"lastName\": \"{{$randomLastName}}\",\n                \"spendLevel\": \"{{$randomColor}}\",\n                \"currency\": \"{{$randomCurrencyName}}\",\n                \"country\": \"{{$randomCountry}}\"\n            }\n        ],\n    \"limit\": \"100\",\n    \"nextPage\": \"{{baseUrl}}/customers?next_page\"\n}"
+						},
+						{
+							"id": "4a754dc7-64d1-4e30-ad15-491f5f6f49a4",
+							"name": "Malformed request body",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Malformed request\",\n    \"message\": \"The server was not able to accept this request\"\n}"
+						},
+						{
+							"id": "5314a540-330a-4e3c-8811-fbf7a522af20",
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-Api-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Internal server error\"\n}"
+						}
+					]
+				}
+			],
+			"id": "267f70ff-0c29-41f2-85e0-9f54d0814bb6",
+			"description": "## Customer search\n\nThis folder is meant to demonstrate different ways through which we can surface production-like data.\n\nThere are no tests or pre-request scripts, but the examples are using different types of variables in responses to implement this behavior. The variables in use are:\n\n- [Randomized values](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/) (Faker library)\n- [Contextual responses](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/creating-dynamic-responses/)\n    \n\nAnother option for more production-like variables is to use a [Wildcard variable](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/matching-algorithm/#using-wildcard-variables)."
+		},
+		{
+			"name": "CRUD Challenge",
+			"item": [
+				{
+					"name": "Create customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6aa7fdf4-cce4-4434-a38d-94ca0670ff95",
+								"exec": [
+									"// SET A RANDOMIZED INTEGER AND ",
+									"// SET IT AS A NEW VARIABLE",
+									"let spendLevel = Math.floor(Math.random()*100);",
+									"pm.collectionVariables.set('spendLevel', JSON.parse(parseInt(spendLevel)));",
+									"",
+									"// CREATE A REQUEST TO ",
+									"// CALL RANDOM USER INFO",
+									"const userRequest = {",
+									"    url: 'https://randomuser.me/api',",
+									"    method: 'GET'",
+									"}",
+									"",
+									"// SEND THE REQUEST DEFINED ABOVE AND SET ",
+									"// COLLECTION-LEVEL VARIABLES BASED ON THE RESPONSE",
+									"pm.sendRequest(userRequest, (error, response) => {",
+									"    let res = response.json().results[0];",
+									"    console.log(error ? error: res); // RETURNS ERROR OR RESPONSE DEPENDING ON RESULTS",
+									"    let firstName = res.name.first;",
+									"    let lastName = res.name.last;",
+									"    let email = res.email;",
+									"    let dob = res.dob.date;",
+									"    let age = res.dob.age;",
+									"    let cell = res.cell;",
+									"    let nationality = res.nat;",
+									"    pm.collectionVariables.set('firstName', firstName);",
+									"    pm.collectionVariables.set('lastName', lastName);",
+									"    pm.collectionVariables.set('email', email);",
+									"    pm.collectionVariables.set('dob', dob);",
+									"    pm.collectionVariables.set('age', age);",
+									"    pm.collectionVariables.set('cell', cell);",
+									"    pm.collectionVariables.set('nationality', nationality);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d37b9a11-0c5c-4a51-a46d-acd97c09fa54",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f9bd3d40-c2cf-4bc7-9f72-5985d2cce1d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"spendLevel\": {{spendLevel}},\n    \"preferredCurrency\": \"{{$randomCurrencyCode}}\",\n    \"nationality\": \"{{nationality}}\",\n    \"email\": \"{{email}}\",\n    \"dob\": \"{{dob}}\",\n    \"age\": \"{{age}}\",\n    \"cell\": \"{{cell}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "bce5aebf-06e2-49f9-af53-5eb474489d8e",
+							"name": "Create customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customerId\": \"{{$randomUUID}}\",\n    \"firstName\": \"{{$body 'firstName'}}\",\n    \"lastName\": \"{{$body 'lastName'}}\",\n    \"spendLevel\": {{$body 'spendLevel'}},\n    \"currency\": \"{{$body 'preferredCurrency'}}\",\n    \"preferredCurrency\": \"{{$body 'preferredCurrency'}}\",\n    \"country\": \"{{$body 'nationality'}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Read a customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6e70e7b9-50a1-4228-b247-ef690fa1b609",
+								"exec": [
+									"console.log(`Starting request to random user API`);",
+									"",
+									"// CREATE A REQUEST TO CALL RANDOM USER INFO",
+									"// LOG ERROR IF REQUEST FAILS OR SET VARIABLE WHEN REQUEST IS SUCCESSFUL",
+									"pm.sendRequest('https://randomuser.me/api', (error, response) => {",
+									"    if(error){",
+									"        console.log(`An error occurred!\\n ${error}`);",
+									"    } else {",
+									"        let userId = response.json().results[0].login.uuid;",
+									"        pm.collectionVariables.set('userId', userId);",
+									"        pm.collectionVariables.set('randomUserData', JSON.stringify(response.json()));",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "45c01a2d-6e91-4760-929a-944b1ce18f2e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4f955ba8-15fc-4b55-9374-d7c712f36709",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mock-response-id",
+								"value": "23503262-3fc6b833-dcfd-4b68-b556-9c3825c5f0bd",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6d0b35f2-53d5-415a-bb92-ec6c947d0701",
+							"name": "Customer data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers/{{userId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"{{userId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jul 2023 21:16:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=a534e8dbefcea89f"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=2b7316bc39484fcb"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "117"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1688764652"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad-k3B5ZZ8PoRYytMTuF/O90YrShDA\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customerId\": \"{{$pathSegments '1'}}\",\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"spendLevel\": \"${{$randomInt}}.00\",\n    \"preferredCurrency\": \"{{$randomCurrencyCode}}\",\n    \"country\": \"{{$randomCountry}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4b00ed72-8711-4da1-bfeb-aeca54e10635",
+								"exec": [
+									"// SET A RANDOMIZED INTEGER AND ",
+									"// SET IT AS A NEW VARIABLE",
+									"let spendLevel = Math.floor(Math.random()*100);",
+									"pm.collectionVariables.set('spendLevel', JSON.parse(parseInt(spendLevel)));",
+									"",
+									"// CREATE A REQUEST TO ",
+									"// CALL RANDOM USER INFO",
+									"const userRequest = {",
+									"    url: 'https://randomuser.me/api',",
+									"    method: 'GET'",
+									"}",
+									"",
+									"// SEND THE REQUEST DEFINED ABOVE AND SET ",
+									"// COLLECTION-LEVEL VARIABLES BASED ON THE RESPONSE",
+									"pm.sendRequest(userRequest, (error, response) => {",
+									"    let res = response.json().results[0];",
+									"    // console.log(error ? error: res);",
+									"    let firstName = res.name.first;",
+									"    let lastName = res.name.last;",
+									"    let email = res.email;",
+									"    let dob = res.dob.date;",
+									"    let age = res.dob.age;",
+									"    let cell = res.cell;",
+									"    let nationality = res.nat;",
+									"    pm.collectionVariables.set('firstName', firstName);",
+									"    pm.collectionVariables.set('lastName', lastName);",
+									"    pm.collectionVariables.set('email', email);",
+									"    pm.collectionVariables.set('dob', dob);",
+									"    pm.collectionVariables.set('age', age);",
+									"    pm.collectionVariables.set('cell', cell);",
+									"    pm.collectionVariables.set('nationality', nationality);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ddf9df1d-76e8-47b3-a93c-5ea6252f5008",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0eb8dc82-e8d6-4183-952d-ceb6ac6e5056",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"{{firstName}}\",\n    \"lastName\": \"{{lastName}}\",\n    \"spendLevel\": {{spendLevel}},\n    \"preferredCurrency\": \"{{$randomCurrencyCode}}\",\n    \"nationality\": \"{{nationality}}\",\n    \"email\": \"{{email}}\",\n    \"dob\": \"{{dob}}\",\n    \"age\": \"{{age}}\",\n    \"cell\": \"{{cell}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customers/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "cd1f5fa0-6289-490c-9920-116a4b9d6ff8",
+							"name": "Update customer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers/{{userId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"{{userId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customerId\": \"{{$randomUUID}}\",\n    \"firstName\": \"{{$body 'firstName'}}\",\n    \"lastName\": \"{{$body 'lastName'}}\",\n    \"spendLevel\": {{$body 'spendLevel'}},\n    \"currency\": \"{{$body 'preferredCurrency'}}\",\n    \"preferredCurrency\": \"{{$body 'preferredCurrency'}}\",\n    \"country\": \"{{$body 'nationality'}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c99e0c80-2e57-4efc-af09-b48e3c3bad5e",
+								"exec": [
+									"// CREATE A REQUEST TO ",
+									"// CALL RANDOM USER INFO",
+									"const userRequest = {",
+									"    url: 'https://randomuser.me/api',",
+									"    method: 'GET'",
+									"}",
+									"",
+									"// SEND THE REQUEST DEFINED ABOVE AND SET ",
+									"// COLLECTION-LEVEL VARIABLES BASED ON THE RESPONSE",
+									"pm.sendRequest(userRequest, (error, response) => {",
+									"    let userId = error ? error: response.json().results[0].login.uuid;",
+									"    pm.collectionVariables.set('userId', userId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "efb1995b-47fa-4561-beb7-341aa530c12a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ec914d0e-7646-4a74-b5d2-d6bf431e4ca3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-delete-customer-bool",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "51347a3a-0b83-470d-84a8-068c9536bd66",
+							"name": "Delete customer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers/{{userId}}?x-delete-customer-bool=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										"{{userId}}"
+									],
+									"query": [
+										{
+											"key": "x-delete-customer-bool",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "97e1568f-3453-4566-b162-c283ff57e10a",
+			"description": "## Collection setup & runner\n\nYou should have already [forked](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-entities/) the **Customers CHALLENGE** collection to a workspace of your own\n\n### **Notes**\n\n- This collection leverages a [Mock server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/)\n- These collections use pre-defined example responses that the Mock Server is serving\n    \n\n### **Next steps**\n\n1. Send each request from the **CRUD Challenge** folder at least once\n    1. Review the example responses for each request\n    2. Confirm you receive expected responses based on pre-defined example responses\n2. In the Tests tab, add each of the following [test snippets](https://learning.postman.com/docs/writing-scripts/test-scripts/#using-snippets)\\* to each request in the CRUD Challenge folder and save\n    1. `Status Code: Code is 200`\n    2. `Status code name has string`\n    3. `Response time is less than 200ms`\n    4. `Response headers: Content-Type is present`\n3. Send each request and validate responses\n4. Part of this challenge is to update the tests to correctly validate expected responses\n    1. Ex: For a successful POST request, users would expect a `201 Created` HTTP response, as opposed to `200 OK`.\n5. When tests are passing, run your collection\n6. Go to Runs tab and review run data\n    \n\n### Expected results\n\n- All tests should indicate a “Success”\n    - POST calls should have 201\n    - GET/PUT calls should have 200\n    - DELETE calls should have 204\n- Collection runner runs without any errors and all tests pass"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-Api-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1fbb96af-9da0-4332-b0e6-daab3fc74bdb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cd026643-4169-402c-9b03-f8970b076644",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d7f2ce25-88ec-411f-bc17-3c6a4bd76369",
+			"key": "baseUrl",
+			"value": "https://ef10ec23-f5c6-4db6-9673-3056fefd5ccb.mock.pstmn.io"
+		},
+		{
+			"id": "7f3eedb2-b09a-4fa2-8d5f-9447fca0e5ab",
+			"key": "randomUserData",
+			"value": ""
+		},
+		{
+			"id": "fd17ee38-7356-4554-9d77-21a51c2bc0db",
+			"key": "userId",
+			"value": ""
+		},
+		{
+			"id": "bc05e366-f1f2-46d1-8e27-bc2f81331f9d",
+			"key": "firstName",
+			"value": ""
+		},
+		{
+			"id": "074cfdcf-e959-4cce-aa76-a52e2bf6f72b",
+			"key": "lastName",
+			"value": ""
+		},
+		{
+			"id": "e863d657-1498-479e-838f-bbf8a1c9ddcc",
+			"key": "email",
+			"value": ""
+		},
+		{
+			"id": "d998d332-78cf-4f5c-8e63-86bbb4190a41",
+			"key": "dob",
+			"value": ""
+		},
+		{
+			"id": "bf6112cc-7c1d-449a-b6d2-c63906cf9e68",
+			"key": "age",
+			"value": ""
+		},
+		{
+			"id": "ae50193d-79fb-46e2-8727-9c54b64ebd4b",
+			"key": "cell",
+			"value": ""
+		},
+		{
+			"id": "cf2c2c66-299e-4b55-be56-5fa996c786aa",
+			"key": "nationality",
+			"value": ""
+		},
+		{
+			"id": "c1a85636-8319-498e-bb12-e9fafd43fa94",
+			"key": "spendLevel",
+			"value": ""
+		}
+	]
+}
