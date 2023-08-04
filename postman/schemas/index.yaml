@@ -21,7 +21,7 @@ paths:
         '403':
           description: Unauthorized access
         '500':
-          description: Internal server error
+          description: Internal server error 
             
   /customers/{customerId}:
     parameters:
