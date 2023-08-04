@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - test-automation-demo-ml
+      - dev
+      - main
 
 jobs:
   automated-api-tests:
