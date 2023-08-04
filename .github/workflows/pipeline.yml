@@ -21,7 +21,7 @@ jobs:
           # Lint your API using Postman CLI
           postman api lint e1b072fc-a465-49cc-b26d-8ae4dbd109dc --integration-id 145546
 
-# name: Postman Pipeline Test Runner
+# name: Postman Pipeline Test
 
 # on:
 #   push:
