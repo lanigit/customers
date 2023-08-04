@@ -1,8 +1,9 @@
 name: Test Automation using Postman w/CICD
 
-on: push
-  steps: 
-    users: test-automation-demo-ml
+on: 
+  push:
+    branches:
+      - test-automation-demo-ml
 
 jobs:
   automated-api-tests:
