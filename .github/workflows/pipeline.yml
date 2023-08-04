@@ -1,9 +1,6 @@
-
-name: Test Automation using Postman w/CICD
+name: Automated API tests using Postman CLI
 
 on: push
-
-name: 
 
 jobs:
   automated-api-tests:
@@ -19,4 +16,4 @@ jobs:
         run: |
           postman collection run "${{ github.workspace }}/postman/collections/Customers CHALLENGE.json" --integration-id "144392-${{ github.run_id }}" -i 'CRUD Challenge'
           # Lint your API using Postman CLI
-          postman api lint e1b072fc-a465-49cc-b26d-8ae4dbd109dc --integration-id 145546
+          postman api lint cfd9425f-2989-4f81-87e0-bea133996be4 --integration-id 144392
