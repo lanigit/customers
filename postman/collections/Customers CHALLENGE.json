@@ -199,7 +199,6 @@
 								"type": "text/javascript"
 							}
 						}
-					],
 					"id": "8476d2a3-b858-4205-a2b2-112f9381f0f8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -274,7 +273,6 @@
 					"event": [
 						{
 							"listen": "test",
-							"script": {
 								"id": "8325e68b-56f5-44fb-8eaf-996d14df69b8",
 								"exec": [
 									""
@@ -414,7 +412,6 @@
 						}
 					]
 				}
-			],
 			"id": "267f70ff-0c29-41f2-85e0-9f54d0814bb6",
 			"description": "## Customer search\n\nThis folder is meant to demonstrate different ways through which we can surface production-like data.\n\nThere are no tests or pre-request scripts, but the examples are using different types of variables in responses to implement this behavior. The variables in use are:\n\n- [Randomized values](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/) (Faker library)\n- [Contextual responses](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/creating-dynamic-responses/)\n    \n\nAnother option for more production-like variables is to use a [Wildcard variable](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/matching-algorithm/#using-wildcard-variables)."
 		},
