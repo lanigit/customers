@@ -16,7 +16,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b59b66e9-0d35-4754-9c6b-b3937b125948",
 								"exec": [
 									""
 								],
