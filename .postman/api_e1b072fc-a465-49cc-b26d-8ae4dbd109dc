@@ -3,14 +3,13 @@ configVersion = 1.0.0
 type = apiEntityData
 
 [config]
-id = cfd9425f-2989-4f81-87e0-bea133996be4
+id = e1b072fc-a465-49cc-b26d-8ae4dbd109dc
 
 [config.relations]
 
 [config.relations.collections]
 rootDirectory = postman/collections
-
-files[] = {"id":"23503262-8e291803-1fa9-45f0-88fa-2ed4932c0116","path":"Customers CHALLENGE.json","metaData":{}}
+files[] = {"id":"23503262-77a3e073-13b9-4741-a2ce-2b7a7c436c3d","path":"Customers(1).json","metaData":{}}
 
 [config.relations.collections.metaData]
 
